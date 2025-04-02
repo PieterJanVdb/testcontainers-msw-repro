@@ -19,6 +19,7 @@
           packages = [
             pkgs.nodejs
             pkgs.python3
+            pkgs.pnpm
           ];
         };
       }
