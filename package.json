@@ -18,5 +18,6 @@
     "overrides": {
       "@mswjs/interceptors": "0.37.5"
     }
-  }
+  },
+  "packageManager": "pnpm@10.7.1"
 }
