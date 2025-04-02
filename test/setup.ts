@@ -13,6 +13,7 @@ const server = setupServer(...handlers);
 beforeAll(async () => {
   server.listen({
     onUnhandledRequest(request, print) {
+      console.log(request);
       if (["localhost", "127.0.0.1"].includes(new URL(request.url).hostname)) {
         return;
       }
