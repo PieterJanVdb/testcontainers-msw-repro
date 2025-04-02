@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "vitest run test/index.test.mjs"
+    "test": "vitest run -c vitest.config.mjs test/index.test.mjs"
   },
   "author": "",
   "license": "ISC",
