@@ -7,7 +7,6 @@ export default defineConfig({
       DEBUG: "testcontainers:*",
     },
     include: ["test/**/*.int.ts"],
-    setupFiles: ['./test/setup.ts'],
     mockReset: true,
     coverage: {
       enabled: false,
