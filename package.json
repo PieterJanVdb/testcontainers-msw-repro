@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "vitest run -c vitest.config.mjs test/index.test.mjs"
+    "test": "NODE_OPTIONS='--import tsx' vitest run -c vitest.config.mjs test/index.test.ts"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "@testcontainers/postgresql": "^10.23.0",
+    "@types/node": "^22.14.0",
     "msw": "^2.7.3",
     "testcontainers": "^10.23.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
     "vitest": "^3.1.1"
   },
   "pnpm": {

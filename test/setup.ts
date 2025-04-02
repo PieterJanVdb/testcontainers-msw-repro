@@ -1,12 +1,14 @@
-import { beforeAll, afterAll, afterEach } from 'vitest';
-import { setupServer } from 'msw/node';
-import { http, HttpResponse } from 'msw';
+import { beforeAll, afterAll, afterEach } from "vitest";
+import { setupServer } from "msw/node";
+import { http, HttpResponse } from "msw";
 
 const handlers = [
-  http.get('http://some-endpoint.com/test', async () => HttpResponse.json({}, { status: 200 })),
+  http.get("http://some-endpoint.com/test", async () =>
+    HttpResponse.json({}, { status: 200 })
+  ),
 ];
 
-const server = setupServer(...[]);
+const server = setupServer(...handlers);
 
 beforeAll(async () => {
   server.listen({
@@ -27,4 +29,3 @@ afterEach(async () => {
 afterAll(async () => {
   server.close();
 });
-

@@ -1,9 +1,12 @@
-import { describe, beforeAll, beforeEach, afterAll, afterEach, it, expect } from 'vitest';
-import { PostgreSqlContainer } from "@testcontainers/postgresql";
+import { describe, beforeAll, afterAll, afterEach, it, expect } from "vitest";
+import {
+  PostgreSqlContainer,
+  StartedPostgreSqlContainer,
+} from "@testcontainers/postgresql";
 
-describe('repro', () => {
-  let one;
-  let two;
+describe("repro", () => {
+  let one: StartedPostgreSqlContainer;
+  let two: StartedPostgreSqlContainer;
 
   beforeAll(async () => {
     one = await new PostgreSqlContainer("postgres:16-alpine").start();
@@ -22,9 +25,7 @@ describe('repro', () => {
     await two.stop();
   }, 60000);
 
-  it('should run', () => {
+  it("should run", () => {
     expect(true).toBe(true);
   });
 });
-
-
