@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "NODE_OPTIONS='--import tsx' vitest run -c vitest.config.mjs test/index.test.ts"
+    "test": "NODE_OPTIONS='--import tsx' vitest run -c vitest.config.mjs"
   },
   "author": "",
   "license": "ISC",
