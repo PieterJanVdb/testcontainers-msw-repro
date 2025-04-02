@@ -5,24 +5,19 @@ import {
 } from "@testcontainers/postgresql";
 
 describe("repro", () => {
-  let one: StartedPostgreSqlContainer;
-  let two: StartedPostgreSqlContainer;
+  let container: StartedPostgreSqlContainer;
 
   beforeAll(async () => {
-    one = await new PostgreSqlContainer("postgres:16-alpine").start();
-    await one.snapshot();
-    two = await new PostgreSqlContainer("postgres:16-alpine").start();
-    await two.snapshot();
+    container = await new PostgreSqlContainer("postgres:16-alpine").start();
+    await container.snapshot();
   }, 60000);
 
   afterEach(async () => {
-    await one.restoreSnapshot();
-    await two.restoreSnapshot();
+    await container.restoreSnapshot();
   }, 60000);
 
   afterAll(async () => {
-    await one.stop();
-    await two.stop();
+    await container.stop();
   }, 60000);
 
   it("should run", () => {
