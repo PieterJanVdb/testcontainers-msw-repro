@@ -17,13 +17,13 @@ describe("repro", () => {
   }, 60000);
 
   afterEach(async () => {
-    await containerOne.restoreSnapshot();
-    await containerTwo.restoreSnapshot();
+    await containerOne?.restoreSnapshot();
+    await containerTwo?.restoreSnapshot();
   }, 60000);
 
   afterAll(async () => {
-    await containerOne.stop();
-    await containerTwo.stop();
+    await containerOne?.stop();
+    await containerTwo?.stop();
   }, 60000);
 
   it("should run", () => {
