@@ -6,7 +6,7 @@ export default defineConfig({
     env: {
       DEBUG: "testcontainers:*",
     },
-    include: ["./test/**/*.test.ts"],
+    include: ["test/**/*.int.ts"],
     setupFiles: ['./test/setup.ts'],
     mockReset: true,
     coverage: {
