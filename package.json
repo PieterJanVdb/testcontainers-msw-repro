@@ -1,0 +1,20 @@
+{
+  "name": "testcontainers-msw-repro",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run test/index.test.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@testcontainers/postgresql": "^10.23.0",
+    "msw": "^2.7.3",
+    "testcontainers": "^10.23.0",
+    "vitest": "^3.1.1"
+  },
+  "overrides": {
+    "@mswjs/interceptors": "0.37.5"
+  }
+}

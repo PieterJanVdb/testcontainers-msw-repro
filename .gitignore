@@ -1,0 +1,4 @@
+flake.lock
+.direnv
+.envrc
+node_modules
