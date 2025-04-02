@@ -6,7 +6,12 @@ export default defineConfig({
     env: {
       DEBUG: "testcontainers:*",
     },
+    include: ["./test/**/*.test.ts"],
     setupFiles: ['./test/setup.ts'],
+    mockReset: true,
+    coverage: {
+      enabled: false,
+    },
     poolOptions: {
       forks: {
         maxForks: 1,
