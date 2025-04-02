@@ -1,14 +1,5 @@
 import { beforeAll, afterAll, afterEach } from "vitest";
-import { setupServer } from "msw/node";
-import { http, HttpResponse } from "msw";
-
-const handlers = [
-  http.get("http://some-endpoint.com/test", async () =>
-    HttpResponse.json({}, { status: 200 })
-  ),
-];
-
-const server = setupServer(...handlers);
+import { server } from "./server.js";
 
 beforeAll(async () => {
   server.listen({
